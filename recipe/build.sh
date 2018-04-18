@@ -3,8 +3,12 @@
 mkdir build
 cd build
 
-cmake  -DCMAKE_INSTALL_PREFIX=$PREFIX ..
+cmake  -G"$CMAKE_GENERATOR" \
+       -DCMAKE_BUILD_TYPE=Release \
+       -DCMAKE_PREFIX_PATH=$PREFIX \
+       -DCMAKE_INSTALL_PREFIX=$PREFIX \
+       ..
 
-make
+make VERBOSE=1 -j${CPU_COUNT}
 make install
 
