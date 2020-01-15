@@ -17,10 +17,11 @@ source:
     - 0001-Add-definition-for-lldiv_t.patch  # [win and vc<14]
     - 0001-CPPFLAGS-can-have-more-than-one-compiler-definition.patch
     - 0002-GCC-7-Fix-empty-string-comparison-error.patch
+    # Copied from https://gitweb.gentoo.org/repo/gentoo.git/tree/dev-db/mysql-connector-c/files/6.1.11-openssl-1.1.patch
     - 0003-Don-t-use-deprecated-API-with-openssl-1.1.patch  # [unix]
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/mysql-connector-c/
     # Scary symbol removal between patch versions
@@ -49,9 +50,9 @@ about:
   summary: 'MySQL Connector/C, the C interface for communicating with MySQL servers.'
 
   description: |
-    Connector/C is a client library that implements the C API for 
-    client/server communication. It is a standalone replacement for 
-    the MySQL client library shipped with MySQL Server distributions. 
+    Connector/C is a client library that implements the C API for
+    client/server communication. It is a standalone replacement for
+    the MySQL client library shipped with MySQL Server distributions.
 
 extra:
   recipe-maintainers:
