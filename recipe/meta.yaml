@@ -35,7 +35,7 @@ requirements:
     - make        # [unix]
     - patch       # [not win]
     - m2-patch    # [win]
-   host:
+  host:
     - openssl     # [not win]
     - msinttypes  # [win and vc<14]
 
