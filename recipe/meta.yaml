@@ -1,7 +1,7 @@
 {% set name = "mysql-connector-c" %}
-{% set version = "6.1.11" %}
-{% set sha256 = "c8664851487200162b38b6f3c8db69850bd4f0e4c5ff5a6d161dbfb5cb76b6c4" %}  # [not win]
-{% set sha256 = "44d7c9be33b148a7391c5e1690b4788de3ced3e79084f3a2787d103bd12cd495" %}  # [win]
+{% set version = "8.0.29" %}
+{% set sha256 = "9a6236a28bca33ae951d8ccaabb8ff51a188863e8599f9096f4ae0a1da19f87f" %}  # [not win]
+{% set sha256 = "c1e4f1d0e6528d6327aa60490fa139c1421c76c2efbe0655a56fbe8f3e0117d7" %}  # [win]
 
 package:
   name: {{ name|lower }}
@@ -10,15 +10,15 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz  # [not win]
   fn: {{ name }}-{{ version }}.zip  # [win]
-  url: https://dev.mysql.com/get/Downloads/Connector-C/{{ name|lower }}-{{ version }}-src.tar.gz  # [not win]
-  url: https://dev.mysql.com/get/Downloads/Connector-C/{{ name|lower }}-{{ version }}-src.zip  # [win]
+  url: https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-{{ version }}-src.tar.gz  # [not win]
+  url: https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-{{ version }}-src.zip  # [win]
   sha256: {{ sha256 }}
-  patches:
-    - 0001-Add-definition-for-lldiv_t.patch  # [win and vc<14]
-    - 0001-CPPFLAGS-can-have-more-than-one-compiler-definition.patch
-    - 0002-GCC-7-Fix-empty-string-comparison-error.patch
+  #patches:
+    #- 0001-Add-definition-for-lldiv_t.patch  # [win and vc<14]
+    #- 0001-CPPFLAGS-can-have-more-than-one-compiler-definition.patch
+    #- 0002-GCC-7-Fix-empty-string-comparison-error.patch
     # Copied from https://gitweb.gentoo.org/repo/gentoo.git/tree/dev-db/mysql-connector-c/files/6.1.11-openssl-1.1.patch
-    - 0003-Don-t-use-deprecated-API-with-openssl-1.1.patch  # [unix]
+    #- 0003-Don-t-use-deprecated-API-with-openssl-1.1.patch  # [unix]
 
 build:
   number: 1
@@ -50,7 +50,6 @@ about:
   license_family: LGPL
   license_file: COPYING
   summary: 'MySQL Connector/C, the C interface for communicating with MySQL servers.'
-
   description: |
     Connector/C is a client library that implements the C API for
     client/server communication. It is a standalone replacement for
