@@ -21,7 +21,7 @@ source:
     - 0003-Don-t-use-deprecated-API-with-openssl-1.1.patch  # [unix]
 
 build:
-  number: 1
+  number: 2
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/mysql-connector-c/
     # Scary symbol removal between patch versions
@@ -36,7 +36,7 @@ requirements:
     - patch       # [not win]
     - m2-patch    # [win]
   host:
-    - openssl     # [not win]
+    - openssl {{ openssl }}    # [not win]
     - msinttypes  # [win and vc<14]
 
 test:
