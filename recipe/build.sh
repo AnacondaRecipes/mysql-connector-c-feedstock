@@ -11,7 +11,7 @@ fi
 mkdir build
 cd build
 
-Set INSTALL_DOCREADMEDIR to a junk path to avoid installing the README into PREFIX
+# Set INSTALL_DOCREADMEDIR to a junk path to avoid installing the README into PREFIX
 cmake  -G"$CMAKE_GENERATOR" \
        -DWITH_SSL=system \
        -DCMAKE_BUILD_TYPE=Release \
