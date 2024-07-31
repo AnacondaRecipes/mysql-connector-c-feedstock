@@ -26,4 +26,3 @@ index 77da509..55b4441 100644
  IF(CMAKE_SYSTEM_NAME MATCHES "SunOS")
 -- 
 1.9.5 (Apple Git-50.3)
-
