@@ -10,7 +10,8 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz  # [not win]
   fn: {{ name }}-{{ version }}.zip  # [win]
-  url: https://dev.mysql.com/get/Downloads/Connector-C/{{ name|lower }}-{{ version }}-src.tar.gz  # [not win]
+  # url: https://dev.mysql.com/get/Downloads/Connector-C/{{ name|lower }}-{{ version }}-src.tar.gz  # [not win]
+  url: https://cdn.mysql.com//Downloads/Connector-C/mysql-connector-c-6.1.11-src.tar.gz  # [not win]
   url: https://dev.mysql.com/get/Downloads/Connector-C/{{ name|lower }}-{{ version }}-src.zip  # [win]
   sha256: {{ sha256 }}
   # patches copied from conda-forge
