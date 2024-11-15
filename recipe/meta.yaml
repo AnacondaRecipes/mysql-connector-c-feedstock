@@ -45,6 +45,11 @@ requirements:
     - msinttypes  # [win and vc<14]
 
 test:
+  downstreams:
+    - lighttpd
+    - mysql-connector-python
+    - mysql-python
+    - mysqlclient
   commands:
     - mysql_config --version  # [not win]
     - my_print_defaults --version
