@@ -1,6 +1,6 @@
 mkdir build && cd build
 
-cmake -G"%CMAKE_GENERATOR%" ^
+cmake -G Ninja ^
       -DCMAKE_BUILD_TYPE="Release" ^
       -DCMAKE_C_FLAGS="-I%LIBRARY_INC%" ^
       -DCMAKE_CXX_FLAGS="-I%LIBRARY_INC%" ^
