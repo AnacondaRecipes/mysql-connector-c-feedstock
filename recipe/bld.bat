@@ -6,5 +6,10 @@ cmake -G Ninja ^
       -DCMAKE_CXX_FLAGS="-I%LIBRARY_INC%" ^
       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       ..
+if errorlevel 1 exit 1
 
-cmake --build . --target INSTALL --config Release
+ninja
+if errorlevel 1 exit 1
+
+ninja install
+if errorlevel 1 exit 1
